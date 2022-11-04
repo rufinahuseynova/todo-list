@@ -5,7 +5,13 @@ const clearButon = document.querySelector("#clearall");
  
 addButon.addEventListener("click", todoelaveet);
 clearButon.addEventListener("click", todolarisil);
- 
+ const array = [];
+const sortList = (list) =>
+  [...list].sort((a, b) => {
+    const A = a.textContent,
+      B = b.textContent;
+    return A < B ? -1 : A > B ? 1 : 0;
+  }); 
 function todoelaveet() {
     if (addtodo.value == "")      
         alert("TO DO DAXIL EDIN");
